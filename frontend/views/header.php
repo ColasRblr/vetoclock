@@ -10,12 +10,12 @@ if (isset ($_SESSION)) {
            <p> <?= $_SESSION['last_name']; echo '&nbsp'; echo $_SESSION['first_name'] ;echo '<br>Clinique&nbsp'; echo $_SESSION['vet_clinic']?></p>
         </div>
       <div id="boutons">
-        <?php= "<br><button class='btn-header' onclick='window.location.href = `modify_infos.php`'> Modifier mes informations personnelles </button>"; ?>
-        <?php= "<br><button class='btn-header' onclick='window.location.href = `../../backend/processing/logout.php`'>Se déconnecter</button>";?> 
+        <?= "<br><button class='btn-header' onclick='window.location.href = `modify_infos.php`'> Modifier mes informations personnelles </button>"; ?>
+        <?= "<br><button class='btn-header' onclick='window.location.href = `../../backend/processing/logout.php`'>Se déconnecter</button>";?> 
       </div>
       <div id="boutons-responsive">
-        <?php= "<br><button class='btn-header' onclick='window.location.href = `modify_infos.php`'> Paramètres </button>"; ?>
-        <?php= "<br><button class='btn-header' onclick='window.location.href = `../../backend/processing/logout.php`'> X </button>";?> 
+        <?= "<br><button class='btn-header' onclick='window.location.href = `modify_infos.php`'> Paramètres </button>"; ?>
+        <?= "<br><button class='btn-header' onclick='window.location.href = `../../backend/processing/logout.php`'> X </button>";?> 
       </div>
     </div>
   

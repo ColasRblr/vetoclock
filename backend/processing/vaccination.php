@@ -8,4 +8,4 @@ $registerVaccination = $db_connection->prepare('INSERT INTO VACCINATION (pet_id,
 $registerVaccination->execute(array($pet_id, strip_tags($_POST['vaccine_name']), strip_tags($_POST['first_or_booster']), strip_tags($_POST['date']), ($_POST['next_booster'])));
 
     
-header("location: ../views/pet_details.php?pet_id=".$pet_id);
+header("location: ../../frontend/views/pet_details.php?pet_id=".$pet_id);

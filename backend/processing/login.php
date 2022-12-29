@@ -25,7 +25,7 @@ require 'db_connection.php';
           $_SESSION['email'] = $data['email'];
 
           //Redirection towards user-connected.php
-          header('location: ../views/user_connected.php');
+          header('location: ../../frontend/views/user_connected.php');
           die();
 
        //If wrong password, vet advised
@@ -61,16 +61,16 @@ require 'db_connection.php';
           $_SESSION['vet'] = $data['vet'];
 
           //Redirection towards user-connected.php
-          header('location: ../views/user_connected.php');
+          header('location: ../../frontend/views/user_connected.php');
           die();
 
        //If wrong password, client advised
        } else { 
-          echo "Mot de passe invalide <br/> <a href='../index.php'>Retour</a>"; 
+          echo "Mot de passe invalide <br/> <a href='../../index.php'>Retour</a>"; 
              }
 
     //If < 0 : then client is not in the table
     } else {
-       echo "Utilisateur non reconnu <br/> <a href='../index.php'>Retour</a>";
+       echo "Utilisateur non reconnu <br/> <a href='../../index.php'>Retour</a>";
           }
   } 
