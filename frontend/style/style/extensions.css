@@ -1,0 +1,141 @@
+/* Header */
+.general_header, .connected_header {
+    display: flex;
+    position:fixed;
+    width:100vw;
+    top:0;
+    background-color: #fff;
+    opacity: 0.9;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    height:10vh;
+}
+
+#home_link, #userpage_link {
+    margin:5px;
+    background: #fcdc64;
+}
+
+#vetoclock_logo {
+    opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+#vetoclock_logo:hover {
+    opacity: 0.5;
+}
+
+#app-sentence-ad{
+    padding:2vw;
+}
+
+#boutons-responsive {
+    display:none
+}
+
+
+.btn-header{
+    font-size: 0.9em;
+    border-radius: 20px;
+    background-color:#f48c5c;
+    color:#fff;
+    align-items: center;
+    padding:1vh;
+    margin: 2vh;
+    border: solid 2px #888;
+    }
+
+.btn-header:hover {
+    background-color:#fff;
+    color:#f48c5c;
+    cursor:pointer;
+    border: solid 2px #f48c5c;
+    box-shadow:3px 5px #888
+    }
+
+/* Footer */
+
+.connected_footer, .general_footer {
+    display:flex;
+    width:100vw;
+    height: 10vh;
+    background-color:#246464;
+    color: #fff;
+    border-top: #f48c5c solid 10px;
+}
+
+.legal {
+    display: flex;
+    margin:auto;
+    align-items: center;
+}
+
+.connected_footer {
+    display:flex;
+    justify-content: space-around;
+    padding:2%;
+    width:100vw;
+    height: 10vh;
+    background-color:#246464;
+    color: #fff;
+    border-top: #f48c5c solid 10px;
+}
+
+.btn-footer{
+    font-size: 0.9em;
+    border-radius: 20px;
+    background-color:#f48c5c;
+    color:#fff;
+    align-items: center;
+    padding:1vh;
+    margin: 2vh;
+    border: solid 2px #888;
+    }
+
+.btn-footer:hover {
+    background-color:#fff;
+    color:#f48c5c;
+    cursor:pointer;
+    border: solid 2px #f48c5c;
+    box-shadow:3px 5px #888
+    }
+
+
+/*Responsive tablet*/
+@media screen and (max-width: 992px) {
+    
+}
+
+/*Responsive mobile*/
+@media screen and (max-width: 768px) {
+    .connected_header {
+        display: flex;
+        padding:3%;
+        justify-content: space-around;
+    }
+    #boutons {
+        display:none
+    }
+    .user {
+        font-size: 0.8em;
+    }
+    #boutons-responsive{
+        display:flex;
+        flex-direction: column;
+        font-size: 0.8em;
+        margin-top:2%;
+    }
+    .general_footer{
+        margin-top: 1vh;;
+    }
+    .connected_footer {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding:5%;
+        margin-top: 1vh;
+    }
+    
+}

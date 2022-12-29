@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=La+Belle+Aurore&family=Yantramanav:wght@300&display=swap');
+
+body {
+    margin:auto;
+}
+
+.pet_details{
+    display:flex;
+    padding-top : 20vh;
+    height: 100vh;
+    align-items: flex-start;
+    justify-content: center;
+    background: linear-gradient(#fff, rgb(252, 220, 100, 0.2));
+    overflow: scroll;
+}
+
+#left_section, #right_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.pet_id, .pet_appt_report,.pet_vax {
+    display:flex;
+    border-radius: 10%;
+    flex-direction: column;
+    background-color: #f48c5c;
+    align-items: center;
+    padding: 2vw;
+    box-shadow: 6px 8px 0px  #246464;
+    margin : 2vw;
+}
+.pet_picture_name {
+    display:flex;
+}
+
+h2 {
+    font-family: 'Catamaran';
+    color: #246464;
+    font-size: 1em;
+}
+    
+p {
+    font-family: 'Yantramanav';
+    text-align: justify;
+}
+
+.pet_details_btn {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+    border-radius: 20px;
+    border: solid 2px #888;
+    background-color:#246464;
+    color: #fff;
+    margin: 2vh;
+    padding:1vh;
+    }
+    
+.pet_details_btn:hover {
+    background-color:#fff ;
+    color: #246464;
+    cursor:pointer;
+    border: solid 2px #f48c5c;
+    box-shadow:3px 5px #888
+    }
+
+.update_vaccination_btn, .add_appointment_btn {
+    display: flex;
+    align-items: center;
+}
+
+#modify_delete_btn{
+    display:flex;
+    flex-direction: column;
+    bottom:0;
+}
+
+    /*Responsive tablet*/
+@media screen and (max-width: 992px) {
+    
+}
+
+/*Responsive mobile*/
+@media screen and (max-width: 768px) {
+  .pet_details{
+      display:flex;
+      padding-top : 40vh;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+}

@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=La+Belle+Aurore&family=Yantramanav:wght@300&display=swap');
+
+body {
+    margin:auto;
+}
+
+.user-connected{
+    display:flex;
+    padding-top: 15vh;
+    align-items: center;
+    height: 80vh;
+    justify-content: space-around;
+    background: linear-gradient(#fff, rgb(252, 220, 100, 0.2));
+    overflow: scroll;
+}
+
+.pet {
+    display:flex;
+    flex-direction: column;
+    border: solid 2px #f48c5c;
+    border-radius: 20%;
+    width: 80%;
+    background-color: #54c494;
+    align-items: center;
+    padding: 2vw;
+    margin:1vw;
+    box-shadow: 6px 8px 0px  #246464;
+}
+
+.pet_picture_name {
+    display:flex;
+}
+
+h2 {
+    font-family: 'Catamaran';
+    color: #246464;
+    font-size: 1em;
+}
+
+h3 {
+    font-family: 'Catamaran';
+    color: #246464;
+    font-size: 1.3em;
+}
+    
+p {
+    font-family: 'Yantramanav';
+    text-align: justify;
+}
+.usr_btn {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+    border-radius: 20px;
+    border: solid 2px #888;
+    background-color:#246464;
+    color: #fff;
+    margin: 2vh;
+    padding:1vh;
+    }
+        
+.usr_btn:hover {
+    background-color:#fff ;
+    color: #246464;
+    cursor:pointer;
+    border: solid 2px #f48c5c;
+    box-shadow:3px 5px #888
+    }
+
+#left_section {
+    display: flex;
+    flex-direction: column;
+    padding:5%;
+}
+#right_section {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.add_btn {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+    border-radius: 50%;
+    border: solid 2px #888;
+    width: 2.5em;
+    background-color:#246464;
+    color: #fff;
+    margin: 2vh;
+    padding:1vh;
+    }
+    
+.add_btn:hover {
+    background-color:#fff ;
+    color: #246464;
+    cursor:pointer;
+    border: solid 2px #f48c5c;
+    box-shadow:3px 5px #888
+    }
+
+/*Responsive tablet*/
+@media screen and (max-width: 992px) {
+    
+  }
+  
+  /*Responsive mobile*/
+  @media screen and (max-width: 768px) {
+    .user-connected{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30vh;
+  }
+
+  #right_section {
+    display: flex;
+    margin:5%;
+}
+
+}

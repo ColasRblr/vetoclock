@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=La+Belle+Aurore&family=Yantramanav:wght@300&display=swap');
+
+/*FORM*/ 
+
+.form_only {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin : 20vh;
+    height: 70vh;
+    border: solid #54c494 10px;
+    box-shadow: 6px 8px 0px  #246464;
+    padding: 1vw;
+}
+
+
+h3 {
+    font-family: 'Catamaran';
+    color: #246464;
+    font-size: 1.6em;
+    text-shadow: #54c494 0.1em 0.1em 0.1em;
+}
+
+    form {
+    font-family: 'Yantramanav';
+    border: 4px solid #fcdc64;
+    border-radius: 15px;
+    background-color: #f4bcac;
+    width: 70%;
+    }
+    
+    .form_line, .button {
+    display: flex;
+    justify-content: center;
+    }
+    
+    label, input, select{
+    width: 50%;
+    border-radius:10px;
+    margin: 0.5em;
+    }
+    
+    #btn {
+    font-size: 0.9em;
+    border-radius: 20px;
+    border: solid 2px #888;
+    background-color:#f48c5c;;
+    color: #f4f4ec;
+    width:40%;
+    margin:5px;
+    padding:7px;
+    }
+    
+    #btn:hover {
+    background-color:#f4f4ec ;
+    color: #f48c5c;;
+    cursor:pointer;
+    border: solid 2px #f48c5c;
+    box-shadow:3px 5px #888
+    }
+   
+/*Responsive tablet*/
+@media screen and (max-width: 992px) {
+    
+}
+
+/*Responsive mobile*/
+@media screen and (max-width: 768px) {
+ body {
+    min-height:100vh;
+ }
+    .forms {
+        overflow: scroll;
+        padding-top: 15vh;
+        height:70vh;
+    }
+
+    .form_only {
+        margin:2%;
+        padding-bottom: 5vh;
+        height:auto;
+    }
+
+    h3{
+        font-size: 1.1em;
+    }
+    .form {
+        width: 100%;
+    }
+    #btn {   
+        width:60%;
+        }
+    }
+
+    /* RETURN LOGO (reset password page) */
+    
+    #vetoclock_logo {
+        opacity: 1;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    #vetoclock_logo:hover {
+        opacity: 0.5;
+    }
+    
