@@ -1,6 +1,5 @@
 <?php session_start();
 require '../../backend/processing/db_connection.php';
-
 //Récupérer le vet_id que l'utilisateur connecté soit un véto ou un client
 if(isset($_SESSION['vet_id'])) {
 $vet_id = $_SESSION['vet_id'];
@@ -14,6 +13,7 @@ $sqlPet->execute(array($vet_id));
 $pets = $sqlPet -> fetchAll();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
