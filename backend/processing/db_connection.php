@@ -24,13 +24,3 @@ $vet_clinics = $sqlClinic -> fetchAll();
 $sqlVet= $db_connection->prepare("SELECT * FROM VETERINARIAN ORDER BY vet_id");
 $sqlVet->execute(array());
 $vets = $sqlVet -> fetchAll();
-
-//clients
-$sqlClient= $db_connection->prepare("SELECT * FROM CLIENT ORDER BY client_id");
-$sqlClient->execute(array());
-$clients = $sqlClient -> fetchAll();
-
-//pets
-$sqlPet= $db_connection->prepare("SELECT * FROM PET ORDER BY pet_id");
-$sqlPet->execute(array());
-$pets = $sqlPet -> fetchAll();

@@ -17,7 +17,7 @@ require '../db_connection.php';?>
 <div class="forms">
 <div class="form_only">
 <h3> Formulaire d'inscription - Client </h3>
-<form action='../processing/register_client.php' method="post" name="register_form">
+<form action='../../backend/processing/register_client.php' method="post" name="register_form">
     <div class="form_line">
         <label for="lastname" class="label"> Nom </label>
         <input type="text" name="lastname" required="required">  

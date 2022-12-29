@@ -25,17 +25,17 @@ require 'db_connection.php';
           $_SESSION['email'] = $data['email'];
 
           //Redirection towards user-connected.php
-          header('location: ../views/user_connected.php');
+          header('location: ../../frontend/views/user_connected.php');
           die();
 
        //If wrong password, vet advised
        } else { 
-          echo "Mot de passe invalide <br/> <a href='../index.php'>Retour</a>"; 
+          echo "Mot de passe invalide <br/> <a href='../../index.php'>Retour</a>"; 
              }
 
     //If < 0 : then vet is not in the table
     } else {
-       echo "Utilisateur non reconnu <br/> <a href='../index.php'>Retour</a>";
+       echo "Utilisateur non reconnu <br/> <a href='../../index.php'>Retour</a>";
           }
   } elseif ($_POST ['vet-or-client'] =='client')  {
 
@@ -58,19 +58,19 @@ require 'db_connection.php';
           $_SESSION['last_name'] = $data['last_name'];
           $_SESSION['first_name'] = $data['first_name'];
           $_SESSION['vet_clinic'] = $data['vet_clinic'];
-          $_SESSION['vet'] = $data['vet'];
+          $_SESSION['vet'] = $data['vet_id'];
 
           //Redirection towards user-connected.php
-          header('location: ../views/user_connected.php');
+          header('location: ../../frontend/views/user_connected.php');
           die();
 
        //If wrong password, client advised
        } else { 
-          echo "Mot de passe invalide <br/> <a href='../index.php'>Retour</a>"; 
+          echo "Mot de passe invalide <br/> <a href='../../index.php'>Retour</a>"; 
              }
 
     //If < 0 : then client is not in the table
     } else {
-       echo "Utilisateur non reconnu <br/> <a href='../index.php'>Retour</a>";
+       echo "Utilisateur non reconnu <br/> <a href='../../index.php'>Retour</a>";
           }
   } 
