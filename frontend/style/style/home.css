@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600&family=La+Belle+Aurore&family=Yantramanav:wght@300&display=swap');
+
+body {
+    margin:auto;
+}
+
+h1{
+    font-family: 'La Belle Aurore', cursive;
+     font-size: 2em;
+     color: #246464;;
+    }
+
+h2 {
+    display:none;
+    font-family: 'La Belle Aurore', cursive;
+     font-size: 2em;
+     color: #246464;;
+    }
+    
+
+.top_page {
+    display:flex;
+    flex-direction: column;
+    margin-top : 20vh;
+    height: 100vh;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(#fff, rgb(252, 220, 100, 0.2));
+}
+
+#loginform {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid #54c494 10px;
+    padding: 3vw;
+    box-shadow: 6px 8px 0px  #246464;
+}
+
+.bottom_page {
+    display:flex;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10vh;
+    background: linear-gradient(rgb(252, 220, 100, 0.2),#fff);
+}
+
+#vet-part, #client-part {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    border: solid #54c494 10px;
+    padding: 3vw;
+    box-shadow: 6px 8px 0px  #246464;
+}
+
+h3 {
+    font-family: 'Catamaran';
+    color: #246464;
+    font-size: 1.6em;
+    text-shadow: #54c494 0.1em 0.1em 0.1em;
+}
+    
+p {
+    font-family: 'Yantramanav';
+    text-align: justify;
+}
+
+.register_btn {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+    border-radius: 20px;
+    background-color:#246464;
+    color: #fff;
+    width:80%;
+    padding:1vh;
+    }
+    
+.register_btn:hover {
+    background-color:#fff ;
+    color: #246464;
+    cursor:pointer;
+    border: solid 2px #f48c5c;
+    box-shadow:3px 5px #888
+    }
+
+/*Responsive tablet*/
+@media screen and (max-width: 992px) {
+    
+}
+
+/*Responsive mobile*/
+@media screen and (max-width: 768px) {
+h1 {
+   display:none;
+}
+
+h2 {
+    display:flex;
+    font-size: 1.3em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+.top_page{
+    height:auto;
+}
+
+  .bottom_page{
+      display:flex;
+      height:auto;
+      flex-direction: column;
+      align-items: center;
+}
+#vet-part, #client-part, #loginform {
+    width:70%;
+   margin:5%;
+}
+}

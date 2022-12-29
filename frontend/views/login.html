@@ -1,0 +1,20 @@
+<form action="processing/login.php" method="post" name="login_form">
+    <div class="form_line">
+        <label for="vet-or-client"> Je suis: </label> 
+          <select name="vet-or-client" id="vet-or-client">
+            <option value="vet">Vétérinaire</option>
+            <option value="client">Client</option>
+          </select>
+  </div>
+    <div class="form_line">
+        <label for="email" class="email"> Email </label>
+        <input type="email" name="email" id="email" value="">              
+    </div>
+    <div class="form_line">
+        <label for="password" class="password"> Mot de passe </label>
+        <input type="password" name="password" id="password" value="">              
+    </div>
+    <div class="button">
+        <button type="submit" value="submit" id="btn"> Se connecter</button>
+    </div>
+</form>
