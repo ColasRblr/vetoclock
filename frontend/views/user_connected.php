@@ -1,5 +1,17 @@
 <?php session_start();
 require '../../backend/processing/db_connection.php';
+//Récupérer le vet_id que l'utilisateur connecté soit un véto ou un client
+if(isset($_SESSION['vet_id'])) {
+$vet_id = $_SESSION['vet_id'];
+} elseif (isset($_SESSION['vet'])) {
+$vet_id = $_SESSION ['vet'];
+}
+
+//Afin de récupérer les animaux de ce vétérinaire (puisqu'un client n'a qu'un seul véto)
+$sqlPet= $db_connection->prepare("SELECT * FROM PET WHERE vet_id = ? ORDER BY pet_id");
+$sqlPet->execute(array($vet_id));
+$pets = $sqlPet -> fetchAll();
+
 ?>
 
 <!DOCTYPE html>
