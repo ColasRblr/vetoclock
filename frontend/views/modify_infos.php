@@ -1,4 +1,5 @@
 <?php session_start ()?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
 <div class="forms">
 <div class="form_only">
 <h3> Modifier ses informations personnelles </h3>
-<form action='../processing/modify_infos.php' method="post" name="register_form">
+<form action='../../backend/processing/modify_infos.php' method="post" name="register_form">
     <div class="form_line">
         <label for="lastname" class="label"> Nom </label>
         <input type="text" name="lastname">  

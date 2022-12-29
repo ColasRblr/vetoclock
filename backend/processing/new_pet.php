@@ -15,4 +15,4 @@ $vet_id = $sqlVet -> fetch();
 $registerPet = $db_connection->prepare('INSERT INTO PET (owner_email, species, name, birth_date, sex, notes, picture, client_id, vet_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)');
 $registerPet->execute(array(strip_tags ($_POST['owner_email']), strip_tags($_POST['species']), strip_tags($_POST['name']), strip_tags($_POST['birthdate']), strip_tags($_POST['sex']), strip_tags($_POST['notes']), ($_FILES['picture']), ($client_id['client_id']), ($vet_id['vet_id'])));
     
-header("location: ../views/user_connected.php");
+header("location: ../../frontend/views/user_connected.php");

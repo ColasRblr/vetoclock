@@ -1,6 +1,7 @@
 <?php session_start();
-require '../db_connection.php';
+require '../../backend/processing/db_connection.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
