@@ -1,0 +1,4 @@
+backend/vendor
+backend/processing/db_connection.php
+backend/processing/mail.php
+frontend/style/img
