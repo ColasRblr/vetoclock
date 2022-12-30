@@ -1,49 +1,93 @@
 <?php
-//On inclue la connexion à la BDD
-require_once 'dc_connection.php'; 
-    
-//On vérifie que les champs Username, Reponse et Password ne soient pas vides
-if (!empty($_POST['username']) && !empty($_POST['reponse']) && !empty($_POST['password'])) {
+//DB connection
+require_once 'db_connection.php'; 
+
+// Creating variables and security
+   $email = strip_tags($_POST['email']);
+   $answer = strip_tags($_POST['answer']);
+   $password = strip_tags($_POST['new_password']);
+
+//Checking inputs are not empty
+if (!empty($_POST['vet-or-client']) && !empty($_POST['email']) && !empty($_POST['answer']) && !empty($_POST['new_password'])) {
    
-   // Et on sécurise en neutralisant la potentielle entrée de html, en créant les variables
-   $reponse = strip_tags($_POST['reponse']);
-   
-   //On convertit la liste déroulante d'array à string, pour intégrer le choix de l'utilisateur dans la BDD
+   //Conversion array to string
    $question = implode([$_POST['question']]);
       
-   // On regarde si l'utilisateur est inscrit dans la table Account
-   $check = $conn->prepare('SELECT username, reponse, question FROM Account WHERE username=?');
-   $check->execute(array(strip_tags($_POST['username'])));
+   //Checking for vet
+   if ($_POST['vet-or-client']=== "vet") {
+
+   // Checking if vet is registered
+   $check = $db_connection->prepare('SELECT email, secret_question, secret_answer FROM VETERINARIAN WHERE email=?');
+   $check->execute(array(strip_tags($_POST['email'])));
    $data = $check->fetch();
    $row = $check->rowCount(); 
       
-   // Si > à 0 alors l'utilisateur est présent dans la table account
+   // If row > 0 then vet exists
    if($row > 0) {
 
-      //On vérifie que la question sélectionnée soit la même que lors de l'inscription
-      if($question === $data['question']){
+      //Is question selected the same as registration
+      if($question === $data['secret_question']){
 
-         // On vérifie que la réponse soit la bonne
-         if($reponse === $data['reponse']) {
+         // Is answer the good one
+         if($answer === $data['secret_answer']) {
 
-            // Puis on met à jour la BDD en insérant le nouveau mot de passe
-            $update = $conn->prepare("UPDATE Account SET password=? WHERE username=?");
-            $update->execute(array(password_hash($_POST['password'], PASSWORD_DEFAULT), $_POST['username']));
+            // Updating password in db
+            $update = $db_connection->prepare("UPDATE VETERINARIAN SET password=? WHERE email=?");
+            $update->execute(array(password_hash($_POST['new_password'], PASSWORD_DEFAULT), $_POST['email']));
    
-            //On envoie un message de réussite à l'utilisateur
-            echo "Votre mot de passe est modifié ! <br> Vous pouvez vous rendre sur la <a href='index.php'> page d'accueil </a> pour vous connecter";
+            //Success message
+            echo "Votre mot de passe est modifié ! <br> Vous pouvez vous rendre sur la <a href='../../index.php'> page d'accueil </a> pour vous connecter";
 
-         //Si la réponse n'est pas la bonne : envoi d'un message d'erreur
+         //Error message (wrong answer)
          } else {
-            echo "Vous n'avez pas répondu correctement à la question secrète<br><a href='reset-password.php'> Essayez à nouveau </a>"; 
+            echo "Vous n'avez pas répondu correctement à la question secrète<br><a href='../../frontend/views/reset_password.php'> Essayez à nouveau </a>"; 
                 }
-      //Si la question ne correspond pas : envoi d'un message d'erreur
+      //Error message (wrong question)
       } else { 
-         echo "Vous aviez choisi une autre question secrète lors de votre inscription<br><a href='reset-password.php'> Essayez à nouveau </a>";
+         echo "Vous aviez choisi une autre question secrète lors de votre inscription<br><a href='../../frontend/views/reset_password.php'> Essayez à nouveau </a>";
              }
-   //Si < 0, alors l'utilisateur n'est pas présent dans la BDD : envoi d'un message d'erreur
+   //Error message (user isn't in db)
    } else { 
-      echo "Utilisateur non reconnu <br><a href='reset-password.php'> Essayez à nouveau </a>";
-          }
-  }
- ?>
+      echo "Utilisateur non reconnu <br><a href='../../frontend/views/reset_password.php'> Essayez à nouveau </a>";
+     }
+
+     //Same checking for client  
+  } elseif ($_POST['vet-or-client']=== "client") {
+
+  // Checking if client is registered
+  $check = $db_connection->prepare('SELECT email, secret_question, secret_answer FROM CLIENT WHERE email=?');
+  $check->execute(array(strip_tags($_POST['email'])));
+  $data = $check->fetch();
+  $row = $check->rowCount(); 
+     
+  // If row > 0 then client exists
+  if($row > 0) {
+
+     //Is question selected the same as registration
+     if($question === $data['secret_question']){
+
+        // Is answer the good one
+        if($answer === $data['secret_answer']) {
+
+           // Updating password in db
+           $update = $db_connection->prepare("UPDATE CLIENT SET password=? WHERE email=?");
+           $update->execute(array(password_hash($_POST['new_password'], PASSWORD_DEFAULT), $_POST['email']));
+  
+           //Success message
+           echo "Votre mot de passe est modifié ! <br> Vous pouvez vous rendre sur la <a href='../../index.php'> page d'accueil </a> pour vous connecter";
+
+        //Error message (wrong answer)
+        } else {
+           echo "Vous n'avez pas répondu correctement à la question secrète<br><a href='../../frontend/views/reset_password.php'> Essayez à nouveau </a>"; 
+               }
+     //Error message (wrong question)
+     } else { 
+        echo "Vous aviez choisi une autre question secrète lors de votre inscription<br><a href='../../frontend/views/reset_password.php'> Essayez à nouveau </a>";
+            }
+  //Error message (user isn't in db)
+  } else { 
+     echo "Utilisateur non reconnu <br><a href='../../frontend/views/reset_password.php'> Essayez à nouveau </a>";
+         }
+ }
+}
+ 
