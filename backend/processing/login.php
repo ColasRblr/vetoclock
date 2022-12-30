@@ -2,7 +2,7 @@
 require 'db_connection.php';
 
 // We check if vet or client to look into the correct table
-    if ($_POST['vet-or-client']== "vet") {
+    if ($_POST['vet-or-client']=== "vet") {
 
     // We check if the vet is registered
     $check = $db_connection->prepare('SELECT * FROM VETERINARIAN WHERE email =?');
@@ -37,7 +37,7 @@ require 'db_connection.php';
     } else {
        echo "Utilisateur non reconnu <br/> <a href='../../index.php'>Retour</a>";
           }
-  } elseif ($_POST ['vet-or-client'] =='client')  {
+  } elseif ($_POST ['vet-or-client'] ==='client')  {
 
     // We check if the client is registered
     $check = $db_connection->prepare('SELECT * FROM CLIENT WHERE email =?');

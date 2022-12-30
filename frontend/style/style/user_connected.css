@@ -11,7 +11,7 @@ body {
     height: 80vh;
     justify-content: space-around;
     background: linear-gradient(#fff, rgb(252, 220, 100, 0.2));
-    overflow: scroll;
+    overflow:auto;
 }
 
 .pet {

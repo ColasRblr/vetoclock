@@ -17,7 +17,7 @@
 <!-- Reset password form -->
         <div class="form_only">
         <h3> Réinitialisation du mot de passe </h3>
-        <form class="form" method="post" action="../processing/reset-password.php">
+        <form class="form" method="post" action="../../backend/processing/reset_password.php">
         <div class="form_line">
           <label for="vet-or-client"> Je suis : </label> 
             <select name="vet-or-client" id="vet-or-client">
@@ -38,8 +38,8 @@
             </select>
     </div>
     <div class="form_line">
-        <label for="secret_answer" class="label"> Votre réponse </label>
-        <input type="text"  class="text" name="reponse" id="reponse" required="required">            
+        <label for="answer" class="label"> Votre réponse </label>
+        <input type="text"  class="text" name="answer" id="answer" required="required">            
     </div>
     <div class="form_line">
         <label for="new_password" class="label"> Nouveau mot de passe </label>
